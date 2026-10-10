@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Space</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080816;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      padding: 40px 25px;
+      max-width: 600px;
+      animation: appear 1.2s ease;
+    }
+
+    .tag {
+      color: #00f5ff;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 9vw, 75px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #00f5ff, #b44dff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      color: #b8b8d0;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 14px 28px;
+      border: 0;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #00cfff, #9b4dff);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    #message {
+      margin-top: 25px;
+      color: #00f5ff;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 20% 30%, #6426aa55 0, transparent 35%),
+        radial-gradient(circle at 80% 70%, #0066aa44 0, transparent 35%);
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <main class="card">
+    <div class="tag">WELCOME TO THE FUTURE</div>
+
+    <h1>Explore the <span>Unknown.</span></h1>
+
+    <p>
+      Your imagination has no limits.
+      Start your journey into a new digital universe.
+    </p>
+
+    <button onclick="startJourney()">
+      Start Journey 🚀
+    </button>
+
+    <div id="message"></div>
+  </main>
+
+  <script>
+    function startJourney() {
+      document.getElementById("message").textContent =
+        "🚀 Your journey starts now!";
+    }
+  </script>
+</body>
+</html>
